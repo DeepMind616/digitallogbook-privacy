@@ -63,7 +63,7 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 18, 2025</p>
+    <p class="updated">Last updated: <span id="last-updated"></span></p>
 
     <p>
       This Privacy Policy describes how <strong>Digital Logbook</strong> ("we", "our", or "the app") handles your information when you use our mobile application. We are committed to protecting your privacy.
@@ -117,11 +117,23 @@
     <h2>8. Contact Us</h2>
     <p>
       If you have any questions about this Privacy Policy, please contact us at:<br/>
-      <a href="mailto:lykacute1126@gmail.com">bueno.bryan07@gmail.com</a>
+      <a href="mailto:bueno.bryan07@gmail.com">bueno.bryan07@gmail.com</a>
     </p>
 
     <hr class="divider"/>
-    <p class="footer">&copy; 2025 Digital Logbook. All rights reserved.</p>
+    <p class="footer">&copy; <span id="footer-year"></span> Digital Logbook. All rights reserved.</p>
+
   </div>
+
+  <script>
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.toLocaleString('en-US', { month: 'long' });
+    const day = now.getDate();
+
+    document.getElementById('last-updated').textContent = month + ' ' + day + ', ' + year;
+    document.getElementById('footer-year').textContent = year;
+  </script>
+
 </body>
 </html>
